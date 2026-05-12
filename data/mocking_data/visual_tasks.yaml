@@ -1,0 +1,40 @@
+image_prompt_task:
+  description: >
+카드뉴스 슬라이드 텍스트를 분석하여 각 슬라이드에 맞는 이미지 생성 프롬프트를 설계하라.
+
+슬라이드 텍스트: {card_news_slides}
+
+작성 규칙:
+- 슬라이드 수만큼 프롬프트 생성
+- 모든 슬라이드: 텍스트나 글자 지시는 절대 포함하지 말 것 (텍스트 오버레이는 별도 처리됨)
+- 첫 번째 슬라이드(표지): 주제를 상징하는 배경 이미지 — 어두운 톤, 미니멀, 여백이 충분한 구도
+  예: "dark navy background, abstract tech pattern, minimalist, clean layout, 1:1 ratio"
+- 나머지 슬라이드: 내용의 분위기에 맞는 Midjourney 스타일 프롬프트
+  (subject, mood, lighting, camera angle, resolution 포함)
+- IT/테크 브랜드 미적 일관성 유지 (clean, modern, tech-forward)
+  expected_output: >
+    JSON 형식:
+    {"descriptions": ["표지 프롬프트", "슬라이드2 프롬프트", ...]}
+    각 문자열은 독립적인 이미지 생성 프롬프트 (영문, 1문단).
+  agent: photographer_agent
+
+final_review_task:
+  description: >
+    전체 카드뉴스 콘텐츠(슬라이드 텍스트 + 이미지 프롬프트)를 최종 검토하라.
+
+    검토 기준:
+    - IT 뉴스레터 브랜드 보이스 일관성
+    - 슬라이드 흐름의 자연스러움 (도입 → 본문 → 마무리)
+    - 이미지 프롬프트와 텍스트 내용의 정합성
+    - 모든 프롬프트에 텍스트/글자 지시가 없는지 확인 (있으면 제거)
+    - 발행 즉시 가능한 완성도인지 판단
+
+    수정이 필요하면 이미지 프롬프트를 직접 개선하여 반환하라.
+    사람의 최종 확인을 거친 후 발행 준비를 완료한다.
+  expected_output: >
+    JSON 형식:
+    {"descriptions": ["최종 표지 프롬프트", "최종 슬라이드2 프롬프트", ...]}
+    발행 준비 완료된 이미지 생성 프롬프트 목록.
+  agent: creative_director_agent
+  context:
+    - image_prompt_task

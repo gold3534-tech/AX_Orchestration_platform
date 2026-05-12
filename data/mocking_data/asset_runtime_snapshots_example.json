@@ -1,0 +1,139 @@
+{
+  "tool_links": {
+    "fddf85ea-0a75-43c1-9496-dcc2f91f4ba4": [
+      "crewai.directory_read"
+    ]
+  },
+  "runtime_crew": {
+    "name": "Test Crew",
+    "process": "sequential",
+    "asset_id": "4f5f3b21-3e90-4e55-a3c4-d25a2a1655d1",
+    "crew_name": "Test Crew",
+    "version_id": "76c1a66f-b5c7-4de4-81f7-0e263927a25a",
+    "description": "Test Crew",
+    "crew_node_id": "crew:4f5f3b21-3e90-4e55-a3c4-d25a2a1655d1",
+    "task_version_ids": [
+      "3d4f20fb-6b1b-4689-9ed6-af1fe82fcaff",
+      "2163501c-2795-4f3c-b99c-715a11839e59"
+    ],
+    "agent_version_ids": [
+      "0ee42208-d589-4332-ae68-c83d0d708684",
+      "fddf85ea-0a75-43c1-9496-dcc2f91f4ba4"
+    ],
+    "manager_agent_version_id": null
+  },
+  "runtime_tasks": {
+    "2163501c-2795-4f3c-b99c-715a11839e59": {
+      "name": "test",
+      "status": "draft",
+      "asset_id": "c30f0492-4d5c-4a15-9757-7ff63a60ca98",
+      "task_name": "test",
+      "asset_type": "task",
+      "version_id": "2163501c-2795-4f3c-b99c-715a11839e59",
+      "description": "test {topic}",
+      "input_presets": [
+        "topic"
+      ],
+      "version_number": 2,
+      "expected_output": "test",
+      "context_task_ids": [
+        "3d4f20fb-6b1b-4689-9ed6-af1fe82fcaff"
+      ],
+      "depends_on_task_ids": [
+        "3d4f20fb-6b1b-4689-9ed6-af1fe82fcaff"
+      ]
+    },
+    "3d4f20fb-6b1b-4689-9ed6-af1fe82fcaff": {
+      "name": "Test2",
+      "status": "draft",
+      "asset_id": "b10b381b-4701-4f00-8cba-d511f46ca9e8",
+      "task_name": "Test2",
+      "asset_type": "task",
+      "version_id": "3d4f20fb-6b1b-4689-9ed6-af1fe82fcaff",
+      "description": "Test2",
+      "input_presets": [],
+      "version_number": 1,
+      "expected_output": "Test2",
+      "context_task_ids": [],
+      "depends_on_task_ids": []
+    }
+  },
+  "runtime_tools": {
+    "crewai.csv_search": {
+      "name": "CSV Search",
+      "tool_key": "crewai.csv_search",
+      "tool_type": "crewai_tool",
+      "class_name": "CSVSearchTool",
+      "attachments": [
+        {
+          "sort_order": 0,
+          "version_id": "3d4f20fb-6b1b-4689-9ed6-af1fe82fcaff",
+          "tool_config_json": {}
+        }
+      ],
+      "description": "Search CSV files.",
+      "module_path": "crewai_tools",
+      "default_config_json": {}
+    },
+    "crewai.directory_read": {
+      "name": "Directory Read",
+      "tool_key": "crewai.directory_read",
+      "tool_type": "crewai_tool",
+      "class_name": "DirectoryReadTool",
+      "attachments": [
+        {
+          "sort_order": 0,
+          "version_id": "fddf85ea-0a75-43c1-9496-dcc2f91f4ba4",
+          "tool_config_json": {}
+        }
+      ],
+      "description": "Read directory contents.",
+      "module_path": "crewai_tools",
+      "default_config_json": {}
+    }
+  },
+  "schemaVersion": 1,
+  "runtime_agents": {
+    "0ee42208-d589-4332-ae68-c83d0d708684": {
+      "goal": "Test",
+      "name": "Test",
+      "role": "Test",
+      "status": "draft",
+      "asset_id": "bbda709d-57e9-468b-812f-a088edc6c01b",
+      "backstory": "Test",
+      "agent_name": "Test",
+      "asset_type": "agent",
+      "version_id": "0ee42208-d589-4332-ae68-c83d0d708684",
+      "version_number": 1
+    },
+    "fddf85ea-0a75-43c1-9496-dcc2f91f4ba4": {
+      "goal": "Test2",
+      "name": "Test2",
+      "role": "Test2",
+      "status": "draft",
+      "asset_id": "7a43a499-75f8-480f-a9e8-bca0c25b1e1f",
+      "backstory": "Test2",
+      "agent_name": "Test2",
+      "asset_type": "agent",
+      "version_id": "fddf85ea-0a75-43c1-9496-dcc2f91f4ba4",
+      "version_number": 1
+    }
+  },
+  "required_inputs": [
+    "topic"
+  ],
+  "task_tool_links": {
+    "3d4f20fb-6b1b-4689-9ed6-af1fe82fcaff": [
+      "crewai.csv_search"
+    ]
+  },
+  "agent_tool_links": {
+    "fddf85ea-0a75-43c1-9496-dcc2f91f4ba4": [
+      "crewai.directory_read"
+    ]
+  },
+  "task_agent_links": {
+    "2163501c-2795-4f3c-b99c-715a11839e59": "fddf85ea-0a75-43c1-9496-dcc2f91f4ba4",
+    "3d4f20fb-6b1b-4689-9ed6-af1fe82fcaff": "0ee42208-d589-4332-ae68-c83d0d708684"
+  }
+}

@@ -1,0 +1,14 @@
+:root {
+  --color-bg: #f3dfbd;
+  --color-surface: #fff6df;
+  --color-surface-strong: #ffffff;
+  --color-surface-border: #7a5739;
+  --color-text: #22170f;
+  --color-muted: #6b5139;
+  --color-accent: #2f9b96;
+  --color-accent-strong: #ef8b2c;
+  --color-accent-purple: #6f4bd9;
+  --shadow-elevated: 8px 8px 0 rgba(80, 48, 24, 0.24);
+  --shadow-pixel: 4px 4px 0 rgba(80, 48, 24, 0.24);
+  --radius-xl: 8px;
+}

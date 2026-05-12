@@ -1,0 +1,109 @@
+.react-flow {
+  --rf-grid-color: rgba(122, 87, 57, 0.22);
+  --rf-node-border: #7a5739;
+  --rf-panel-bg: #fff6df;
+}
+
+.react-flow__mini-grid {
+  background-image:
+    linear-gradient(to right, var(--rf-grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--rf-grid-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.react-flow__mini-connector {
+  position: absolute;
+  height: 2px;
+  transform-origin: left center;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(125, 211, 252, 0.9), rgba(167, 139, 250, 0.9));
+  box-shadow: 0 0 18px rgba(125, 211, 252, 0.18);
+}
+
+.react-flow__mini-node {
+  backdrop-filter: blur(12px);
+}
+
+.react-flow__panel {
+  background: var(--rf-panel-bg);
+  border: 2px solid var(--rf-node-border);
+  border-radius: 6px;
+  box-shadow: 3px 3px 0 #7a5739;
+  color: #22170f;
+}
+
+.react-flow__controls-button {
+  border-bottom: 1px solid rgba(122, 87, 57, 0.35) !important;
+  background: #fff6df !important;
+  color: #22170f !important;
+}
+
+.react-flow__attribution {
+  display: none;
+}
+
+.react-flow__node-input,
+.react-flow__node-output {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+.crew-triangle-handle {
+  width: 0 !important;
+  height: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.crew-triangle-handle::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.crew-triangle-handle--red {
+  --crew-handle-color: #d9483b;
+}
+
+.crew-triangle-handle--orange {
+  --crew-handle-color: #ef8b2c;
+}
+
+.crew-triangle-handle--green {
+  --crew-handle-color: #2f9b96;
+}
+
+.crew-triangle-handle--input-right,
+.crew-triangle-handle--output-right {
+  border-top: 7px solid transparent !important;
+  border-bottom: 7px solid transparent !important;
+  border-left: 12px solid var(--crew-handle-color) !important;
+}
+
+.crew-triangle-handle--input-up,
+.crew-triangle-handle--output-up {
+  border-right: 7px solid transparent !important;
+  border-left: 7px solid transparent !important;
+  border-bottom: 12px solid var(--crew-handle-color) !important;
+}
+
+.crew-triangle-handle--output-right::after {
+  top: -4px;
+  left: -10px;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 7px solid var(--crew-node-fill, #fff);
+}
+
+.crew-triangle-handle--output-up::after {
+  top: 3px;
+  left: -4px;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-bottom: 7px solid var(--crew-node-fill, #fff);
+}

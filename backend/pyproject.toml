@@ -1,0 +1,45 @@
+[project]
+name = "AX_Backend"
+version = "0.1.0"
+description = ""
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "crewai[anthropic,file-processing,google-genai]==1.14.1",
+    "crewai-tools==1.14.1",
+    "python-dotenv>=1.0.0",
+    "unstructured[html]>=0.18.11",
+    "requests>=2.32.0",
+    "fastapi>=0.115.0",
+    "firecrawl-py>=4.23.0",
+    "uvicorn[standard]>=0.32.0",
+    "supabase>=2.10.0",
+    "python-jose[cryptography]>=3.3.0",
+    "httpx>=0.27.0",
+    "sqlalchemy>=2.0.0",
+    "psycopg2-binary>=2.9.0",
+    "pytest>=8.0.0",
+    "pypdf>=6.10.0",
+    "openai>=2.14.0",
+    "google-api-python-client>=2.150.0",
+    "google-auth>=2.35.0",
+    "google-auth-oauthlib>=1.2.1",
+    "graphifyy>=0.4.23",
+]
+
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["api*"]
+
+[tool.pyright]
+# https://github.com/microsoft/pyright/blob/main/docs/configuration.md
+useLibraryCodeForTypes = true
+exclude = [".cache"]
+
+[tool.ruff]
+# https://beta.ruff.rs/docs/configuration/
+select = ['E', 'W', 'F', 'I', 'B', 'C4', 'ARG', 'SIM']
+ignore = ['W291', 'W292', 'W293']
